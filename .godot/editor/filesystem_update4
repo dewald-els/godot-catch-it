@@ -1,0 +1,5 @@
+res://Scenes/BombDropOff/BombDropOff.tscn
+res://Tilesets/TileSet.tres
+res://Scenes/World/World.tscn
+res://Scenes/Player/Player.tscn
+res://Scenes/Bomb/Bomb.tscn

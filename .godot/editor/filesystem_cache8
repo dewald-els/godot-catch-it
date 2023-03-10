@@ -1,0 +1,47 @@
+2a60927148abd1d33b818b535e306557
+::res://::1678490360
+icon.svg::CompressedTexture2D::7906484332514001123::1678264880::1678264887::1::::<><>::
+::res://Artwork/::1678482926
+::res://Artwork/Bomb/::1678265975
+Bomb Off.png::CompressedTexture2D::7113664694941422610::1678265678::1678265975::1::::<><>::
+Bomb On (52x56).png::CompressedTexture2D::6058363660500744041::1678265678::1678265933::1::::<><>::
+Boooooom (52x56).png::CompressedTexture2D::2001823484079523749::1678265678::1678265933::1::::<><>::
+::res://Artwork/Box/::1678482937
+BoxIdle.png::CompressedTexture2D::3737657793486309958::1678482935::1678482937::1::::<><>::
+::res://Artwork/Lifebar/::1678265933
+Big Heart Idle (18x14).png::CompressedTexture2D::7134132375946106080::1678265678::1678265933::1::::<><>::
+Live Bar.png::CompressedTexture2D::3085593751637718921::1678265679::1678265933::1::::<><>::
+::res://Artwork/Player/::1678461486
+Attack (34x28).png::CompressedTexture2D::976383866538570664::1678461047::1678461277::1::::<><>::
+Dead (34x28).png::CompressedTexture2D::1293151383876181598::1678461039::1678461277::1::::<><>::
+Fall (34x28).png::CompressedTexture2D::6655421456717835692::1678461228::1678461018::1::::<><>::
+Ground (34x28).png::CompressedTexture2D::5314070260509344756::1678461072::1678461018::1::::<><>::
+Hit (34x28).png::CompressedTexture2D::1618101675818543776::1678461005::1678461018::1::::<><>::
+Idle (34x28).png::CompressedTexture2D::4354125141471504378::1678461312::1678461314::1::::<><>::
+Jump (34x28).png::CompressedTexture2D::2319002897689567490::1678461484::1678461486::1::::<><>::
+Run (34x28).png::CompressedTexture2D::7930054983709434613::1678461356::1678461357::1::::<><>::
+::res://Artwork/PlayerWithBomb/::1678460829
+PickUpBomb.png::CompressedTexture2D::6125626628924403360::1678460812::1678460829::1::::<><>::
+PigIdleWithBomb.png::CompressedTexture2D::8611271852157230924::1678460800::1678460829::1::::<><>::
+PigRunWithBomb.png::CompressedTexture2D::5472453778753030705::1678460786::1678460829::1::::<><>::
+PigThrowBomb.png::CompressedTexture2D::1896881298355426018::1678483225::1678460829::1::::<><>::
+::res://Artwork/Tiles/::1678265933
+Decorations (32x32).png::CompressedTexture2D::1545856279296633430::1678265679::1678265933::1::::<><>::
+Terrain (32x32).png::CompressedTexture2D::7501635101415351559::1678265679::1678265933::1::::<><>::
+::res://Autoloaders/::1678462007
+SignalBus.cs::CSharpScript::-1::1678483850::0::1::::<><>::
+::res://Scenes/::1678483347
+::res://Scenes/Bomb/::1678484506
+Bomb.cs::CSharpScript::-1::1678482159::0::1::::<><>::
+Bomb.tscn::PackedScene::5440329860173008338::1678484506::0::1::::<><>::uid://3rx0f2isiye4<>uid://cskymngouxcbh<>res://Scenes/Bomb/Bomb.cs<>uid://c8l6avbtxopcs
+::res://Scenes/BombDropOff/::1678484506
+BombDropOff.cs::CSharpScript::-1::1678483970::0::1::::<><>::
+BombDropOff.tscn::PackedScene::8418561910106062095::1678484506::0::1::::<><>::res://Scenes/BombDropOff/BombDropOff.cs<>uid://btisxbrp6nk2q
+::res://Scenes/Player/::1678484506
+Player.cs::CSharpScript::-1::1678484092::0::1::::<><>::
+Player.tscn::PackedScene::5241202030779436862::1678484506::0::1::::<><>::res://Scenes/Player/Player.cs<>uid://b3bf2mre2ma6m<>uid://dk8m32d7dmqoj<>uid://2a4mfw1uyw7k<>uid://duxmniamf6pjw<>uid://8blvyt5j6ikg<>uid://ctjkf8akfg28s<>uid://cj75rqoeyoqpd
+::res://Scenes/World/::1678484506
+World.cs::CSharpScript::-1::1678376105::0::1::::<><>::
+World.tscn::PackedScene::2935078029492968631::1678484506::0::1::::<><>::res://Scenes/World/World.cs<>uid://cgw43jpbvlk11<>uid://doswlyl8mpepe<>uid://dr7aqqklt0ha2
+::res://Tilesets/::1678459719
+TileSet.tres::TileSet::8180421358227900330::1678459719::0::1::::<><>::uid://de433mifrv07l

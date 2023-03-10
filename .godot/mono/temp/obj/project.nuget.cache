@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Kn92uzAAQp8B7aXe3Fc1LCr+/htcY4a5yDAtprurYgyv0zCZ/67TcG2A59fT7Sxyitk20H4q+zSjXZk1wJZggA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dewal\\Projects\\Godot\\CatchIt\\Catch It.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dewal\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godot.sourcegenerators\\4.0.0\\godot.sourcegenerators.4.0.0.nupkg.sha512",
+    "C:\\Users\\dewal\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godotsharp\\4.0.0\\godotsharp.4.0.0.nupkg.sha512",
+    "C:\\Users\\dewal\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godotsharpeditor\\4.0.0\\godotsharpeditor.4.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
