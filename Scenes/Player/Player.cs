@@ -279,7 +279,7 @@ public partial class Player : CharacterBody2D
     }
     private void OnBombPickupAreaEntered(Node2D body)
     {
-        if (!HasBomb && body is Bomb bomb && bomb.IsExploding == false)
+        if (!HasBomb && body is Bomb bomb && bomb.IsExploding == false && !IsDying && !IsDead)
         {
             PickingUpBomb = true;
             CanMove = false;
