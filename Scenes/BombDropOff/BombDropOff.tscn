@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dr7aqqklt0ha2"]
+[gd_scene load_steps=8 format=3 uid="uid://dr7aqqklt0ha2"]
 
 [ext_resource type="Script" path="res://Scenes/BombDropOff/BombDropOff.cs" id="1_gsnm0"]
 [ext_resource type="Texture2D" uid="uid://btisxbrp6nk2q" path="res://Artwork/Box/BoxIdle.png" id="1_sx3g8"]
+[ext_resource type="Texture2D" uid="uid://dcyfsa0udujpb" path="res://Artwork/Bomb/FuseTimer.png" id="3_fsvov"]
+[ext_resource type="Texture2D" uid="uid://bfwap8big17d5" path="res://Artwork/Bomb/FuseTimerBar.png" id="4_u5a1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnvkw"]
 size = Vector2(32, 24)
@@ -43,6 +45,7 @@ _data = {
 [node name="BombDropOff" type="Node2D"]
 position = Vector2(88, 352)
 script = ExtResource("1_gsnm0")
+BombCapacity = 5
 
 [node name="BombDropOffArea" type="Area2D" parent="."]
 position = Vector2(0, -10)
@@ -59,3 +62,13 @@ texture = ExtResource("1_sx3g8")
 libraries = {
 "": SubResource("AnimationLibrary_k17if")
 }
+
+[node name="CapacityBar" type="TextureProgressBar" parent="."]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = 16.0
+scale = Vector2(1.14624, 1.15)
+texture_under = ExtResource("3_fsvov")
+texture_progress = ExtResource("4_u5a1v")
+texture_progress_offset = Vector2(1, 1)

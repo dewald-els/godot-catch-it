@@ -121,7 +121,7 @@ animation = &"Fuse"
 autoplay = "Idle"
 
 [node name="FuseTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.9
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)

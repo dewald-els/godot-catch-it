@@ -3,3 +3,4 @@ res://Tilesets/TileSet.tres
 res://Scenes/Player/Player.tscn
 res://Scenes/Bomb/Bomb.tscn
 res://Scenes/BombDropOff/BombDropOff.tscn
+res://Scenes/BombDropOff/BombDropOff.cs

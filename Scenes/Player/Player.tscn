@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cgw43jpbvlk11"]
+[gd_scene load_steps=67 format=3 uid="uid://cgw43jpbvlk11"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.cs" id="1_11xe4"]
 [ext_resource type="Texture2D" uid="uid://b3bf2mre2ma6m" path="res://Artwork/Player/Idle (34x28).png" id="1_byot1"]
@@ -159,17 +159,9 @@ region = Rect2(160, 0, 32, 32)
 atlas = ExtResource("5_whl7l")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnw30"]
-atlas = ExtResource("5_whl7l")
-region = Rect2(32, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5o1c8"]
 atlas = ExtResource("5_whl7l")
 region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o3na8"]
-atlas = ExtResource("5_whl7l")
-region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wd75"]
 atlas = ExtResource("2_oug3r")
@@ -371,13 +363,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_kkvxg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qnw30")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_5o1c8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o3na8")
 }],
 "loop": false,
 "name": &"PickUpBomb",
@@ -427,7 +413,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"RunWithBomb",
-"speed": 8.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wtlk"]
@@ -463,10 +449,8 @@ shape = SubResource("RectangleShape2D_574ap")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0812t")
-animation = &"PickUpBomb"
+animation = &"RunWithBomb"
 autoplay = "Idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 2.0
