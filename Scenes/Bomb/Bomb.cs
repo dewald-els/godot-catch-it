@@ -12,6 +12,7 @@ public partial class Bomb : CharacterBody2D
 
     private Area2D ExplosionArea;
     private CollisionShape2D ExplosionAreaCollider;
+    private TextureProgressBar FuseProgressBar;
     private Timer FuseTimer;
 
     public bool IsFusing = false;
@@ -20,6 +21,7 @@ public partial class Bomb : CharacterBody2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        FuseProgressBar = GetNode<TextureProgressBar>("FuseProgressBar");
         ExplosionArea = GetNode<Area2D>("ExplosionArea");
         ExplosionAreaCollider = ExplosionArea.GetNode<CollisionShape2D>("ExplosionCollider");
         Collider = GetNode<CollisionShape2D>("Collider");
@@ -27,6 +29,7 @@ public partial class Bomb : CharacterBody2D
         AnimatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         FuseTimer.Timeout += OnTimerTimeout;
+
         AnimatedSprite.AnimationFinished += OnAnimationFinished;
 
         ExplosionArea.Connect("body_entered", new Callable(this, "OnExplosionAreaEntered"));
@@ -82,6 +85,20 @@ public partial class Bomb : CharacterBody2D
         {
             FuseTimer.Start();
             IsFusing = true;
+        }
+
+        if (IsOnFloor() && IsFusing)
+        {
+            if (FuseProgressBar.Visible == false)
+            {
+                FuseProgressBar.Visible = true;
+            }
+            FuseProgressBar.Value = FuseTimer.TimeLeft / FuseTimer.WaitTime * 100;
+        }
+
+        if (IsExploding)
+        {
+            FuseProgressBar.Visible = false;
         }
 
         if (IsExploding && ExplosionAreaCollider.Disabled == true)

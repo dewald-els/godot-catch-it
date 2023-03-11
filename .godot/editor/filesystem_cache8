@@ -1,18 +1,20 @@
 2a60927148abd1d33b818b535e306557
-::res://::1678496681
+::res://::1678524577
 icon.svg::CompressedTexture2D::7906484332514001123::1678492713::1678492713::1::::<><>::
 README.md::TextFile::-1::1678496738::0::1::::<><>::
 ::res://Artwork/::1678493450
-::res://Artwork/Bomb/::1678492713
+::res://Artwork/Bomb/::1678526681
 Bomb Off.png::CompressedTexture2D::7113664694941422610::1678492713::1678492713::1::::<><>::
 Bomb On (52x56).png::CompressedTexture2D::6058363660500744041::1678492713::1678492713::1::::<><>::
 Boooooom (52x56).png::CompressedTexture2D::2001823484079523749::1678492713::1678492713::1::::<><>::
+FuseTimer.png::CompressedTexture2D::7349520573240547891::1678526680::1678526681::1::::<><>::
+FuseTimerBar.png::CompressedTexture2D::2782809734569071092::1678526700::1678526701::1::::<><>::
 ::res://Artwork/Box/::1678492713
 BoxIdle.png::CompressedTexture2D::3737657793486309958::1678492713::1678492713::1::::<><>::
 ::res://Artwork/Lifebar/::1678493450
 Big Heart Idle (18x14).png::CompressedTexture2D::7134132375946106080::1678492713::1678493450::1::::<><>::
 Live Bar.png::CompressedTexture2D::3085593751637718921::1678492713::1678492713::1::::<><>::
-::res://Artwork/Player/::1678497107
+::res://Artwork/Player/::1678497108
 Attack (34x28).png::CompressedTexture2D::976383866538570664::1678492713::1678492713::1::::<><>::
 Dead (34x28).png::CompressedTexture2D::1293151383876181598::1678495805::1678492713::1::::<><>::
 Fall (34x28).png::CompressedTexture2D::6655421456717835692::1678492713::1678492713::1::::<><>::
@@ -33,17 +35,17 @@ Terrain (32x32).png::CompressedTexture2D::7501635101415351559::1678492713::16784
 ::res://Autoloaders/::1678492713
 SignalBus.cs::CSharpScript::-1::1678494202::0::1::::<><>::
 ::res://Scenes/::1678492713
-::res://Scenes/Bomb/::1678496913
+::res://Scenes/Bomb/::1678526689
 Bomb.cs::CSharpScript::-1::1678495047::0::1::::<><>::
-Bomb.tscn::PackedScene::5440329860173008338::1678496913::0::1::::<><>::uid://3rx0f2isiye4<>uid://cskymngouxcbh<>res://Scenes/Bomb/Bomb.cs<>uid://c8l6avbtxopcs
-::res://Scenes/BombDropOff/::1678496973
+Bomb.tscn::PackedScene::5440329860173008338::1678526689::0::1::::<><>::uid://3rx0f2isiye4<>uid://cskymngouxcbh<>res://Scenes/Bomb/Bomb.cs<>uid://c8l6avbtxopcs<>uid://dcyfsa0udujpb
+::res://Scenes/BombDropOff/::1678525757
 BombDropOff.cs::CSharpScript::-1::1678496908::0::1::::<><>::
-BombDropOff.tscn::PackedScene::8418561910106062095::1678496973::0::1::::<><>::res://Scenes/BombDropOff/BombDropOff.cs<>uid://btisxbrp6nk2q
-::res://Scenes/Player/::1678497057
-Player.cs::CSharpScript::-1::1678496607::0::1::::<><>::
-Player.tscn::PackedScene::5241202030779436862::1678497056::0::1::::<><>::res://Scenes/Player/Player.cs<>uid://b3bf2mre2ma6m<>uid://sooaquowvrj7<>uid://dk8m32d7dmqoj<>uid://2a4mfw1uyw7k<>uid://duxmniamf6pjw<>uid://8blvyt5j6ikg<>uid://xb25skt2faku<>uid://ctjkf8akfg28s<>uid://cj75rqoeyoqpd
-::res://Scenes/World/::1678496913
+BombDropOff.tscn::PackedScene::8418561910106062095::1678525757::0::1::::<><>::res://Scenes/BombDropOff/BombDropOff.cs<>uid://btisxbrp6nk2q
+::res://Scenes/Player/::1678525869
+Player.cs::CSharpScript::-1::1678498745::0::1::::<><>::
+Player.tscn::PackedScene::5241202030779436862::1678525869::0::1::::<><>::res://Scenes/Player/Player.cs<>uid://b3bf2mre2ma6m<>uid://sooaquowvrj7<>uid://dk8m32d7dmqoj<>uid://2a4mfw1uyw7k<>uid://duxmniamf6pjw<>uid://8blvyt5j6ikg<>uid://xb25skt2faku<>uid://ctjkf8akfg28s<>uid://cj75rqoeyoqpd<>uid://7i1h3aiih0f
+::res://Scenes/World/::1678525757
 World.cs::CSharpScript::-1::1678492713::0::1::::<><>::
-World.tscn::PackedScene::2935078029492968631::1678496913::0::1::::<><>::res://Scenes/World/World.cs<>uid://cgw43jpbvlk11<>uid://doswlyl8mpepe<>uid://dr7aqqklt0ha2<>uid://bj7xjpxpxp1mb<>uid://c8v3eak2qicuq
-::res://Tilesets/::1678493129
-TileSet.tres::TileSet::8180421358227900330::1678493129::0::1::::<><>::uid://de433mifrv07l<>uid://wa3a6j4njkyg
+World.tscn::PackedScene::2935078029492968631::1678525757::0::1::::<><>::res://Scenes/World/World.cs<>uid://cgw43jpbvlk11<>uid://doswlyl8mpepe<>uid://dr7aqqklt0ha2<>uid://bj7xjpxpxp1mb<>uid://c8v3eak2qicuq
+::res://Tilesets/::1678524581
+TileSet.tres::TileSet::8180421358227900330::1678524581::0::1::::<><>::uid://de433mifrv07l<>uid://wa3a6j4njkyg

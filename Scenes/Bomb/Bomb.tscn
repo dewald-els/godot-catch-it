@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://cjrlo5jm6ac55"]
+[gd_scene load_steps=22 format=3 uid="uid://cjrlo5jm6ac55"]
 
 [ext_resource type="Texture2D" uid="uid://3rx0f2isiye4" path="res://Artwork/Bomb/Boooooom (52x56).png" id="1_0hqv5"]
 [ext_resource type="Texture2D" uid="uid://cskymngouxcbh" path="res://Artwork/Bomb/Bomb On (52x56).png" id="1_8nior"]
 [ext_resource type="Script" path="res://Scenes/Bomb/Bomb.cs" id="1_i75xm"]
 [ext_resource type="Texture2D" uid="uid://c8l6avbtxopcs" path="res://Artwork/Bomb/Bomb Off.png" id="1_q8ibp"]
+[ext_resource type="Texture2D" uid="uid://dcyfsa0udujpb" path="res://Artwork/Bomb/FuseTimer.png" id="5_4shl2"]
+[ext_resource type="Texture2D" uid="uid://bfwap8big17d5" path="res://Artwork/Bomb/FuseTimerBar.png" id="6_adog2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ci6ex"]
 atlas = ExtResource("1_0hqv5")
@@ -115,10 +117,8 @@ script = ExtResource("1_i75xm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_4ecnm")
-animation = &"Explode"
+animation = &"Fuse"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="FuseTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -139,3 +139,15 @@ shape = SubResource("RectangleShape2D_6a4pi")
 position = Vector2(0, -16)
 shape = SubResource("CircleShape2D_n76wd")
 disabled = true
+
+[node name="FuseProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+z_index = 10
+offset_left = -6.0
+offset_top = -26.0
+offset_right = 34.0
+offset_bottom = 14.0
+value = 100.0
+texture_under = ExtResource("5_4shl2")
+texture_progress = ExtResource("6_adog2")
+texture_progress_offset = Vector2(1, 1)

@@ -1,9 +1,10 @@
+TextureProgressBar
+Sprite2D
 GPUParticles2D
 Timer
 CollisionShape2D
 Area2D
 AnimatedSprite2D
-Sprite2D
 Node2D
 AnimationPlayer
 Camera2D

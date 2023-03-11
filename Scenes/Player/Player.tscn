@@ -381,7 +381,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"PickUpBomb",
-"speed": 7.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -431,7 +431,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wtlk"]
-size = Vector2(25, 16)
+size = Vector2(25, 12)
 
 [sub_resource type="Curve" id="Curve_8wyok"]
 _data = [Vector2(0, 0.190909), 0.0, 0.0, 0, 0, Vector2(0.510714, 1), 0.0446571, 0.0446571, 0, 0, Vector2(1, 0.254545), 0.0, 0.0, 0, 0]
@@ -463,8 +463,10 @@ shape = SubResource("RectangleShape2D_574ap")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0812t")
-animation = &"Idle"
+animation = &"PickUpBomb"
 autoplay = "Idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -479,7 +481,7 @@ position = Vector2(0, -8)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BombPickupArea"]
-position = Vector2(-0.5, 0)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_5wtlk")
 
 [node name="HitParticles" type="GPUParticles2D" parent="."]
