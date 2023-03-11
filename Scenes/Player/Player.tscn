@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cgw43jpbvlk11"]
+[gd_scene load_steps=69 format=3 uid="uid://cgw43jpbvlk11"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.cs" id="1_11xe4"]
 [ext_resource type="Texture2D" uid="uid://b3bf2mre2ma6m" path="res://Artwork/Player/Idle (34x28).png" id="1_byot1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://xb25skt2faku" path="res://Artwork/Player/Hit (34x28).png" id="3_ft8ij"]
 [ext_resource type="Texture2D" uid="uid://ctjkf8akfg28s" path="res://Artwork/PlayerWithBomb/PickUpBomb.png" id="5_whl7l"]
 [ext_resource type="Texture2D" uid="uid://cj75rqoeyoqpd" path="res://Artwork/PlayerWithBomb/PigRunWithBomb.png" id="5_xtdby"]
+[ext_resource type="Texture2D" uid="uid://7i1h3aiih0f" path="res://Artwork/Player/ParticleHitTexture.png" id="11_d82p4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_574ap"]
 size = Vector2(14, 14)
@@ -432,6 +433,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wtlk"]
 size = Vector2(25, 16)
 
+[sub_resource type="Curve" id="Curve_8wyok"]
+_data = [Vector2(0, 0.190909), 0.0, 0.0, 0, 0, Vector2(0.510714, 1), 0.0446571, 0.0446571, 0, 0, Vector2(1, 0.254545), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tni5b"]
+curve = SubResource("Curve_8wyok")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mmrq7"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_tni5b")
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_11xe4")
 
@@ -442,7 +463,7 @@ shape = SubResource("RectangleShape2D_574ap")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0812t")
-animation = &"Dead"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="RespawnTimer" type="Timer" parent="."]
@@ -460,3 +481,12 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BombPickupArea"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_5wtlk")
+
+[node name="HitParticles" type="GPUParticles2D" parent="."]
+position = Vector2(6, -12)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_mmrq7")
+texture = ExtResource("11_d82p4")
+lifetime = 0.25
+one_shot = true
+explosiveness = 0.86

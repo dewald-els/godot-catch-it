@@ -9,6 +9,7 @@ public partial class Player : CharacterBody2D
     public Area2D BombPickupArea;
     private Timer CoyoteTimer;
     private Timer RespawnTimer;
+    private GpuParticles2D HitParticles;
 
     private Vector2 StartPosition;
 
@@ -44,6 +45,7 @@ public partial class Player : CharacterBody2D
 
     public override void _Ready()
     {
+        HitParticles = GetNode<GpuParticles2D>("HitParticles");
         RespawnTimer = GetNode<Timer>("RespawnTimer");
         AnimatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         BombPickupArea = GetNode<Area2D>("BombPickupArea");
@@ -232,6 +234,7 @@ public partial class Player : CharacterBody2D
     }
     private void OnHitByExplosion()
     {
+        HitParticles.Emitting = true;
         IsHitByExplosion = true;
         Health--;
         if (Health == 0)
