@@ -1,16 +1,38 @@
-[gd_scene load_steps=56 format=3 uid="uid://cgw43jpbvlk11"]
+[gd_scene load_steps=65 format=3 uid="uid://cgw43jpbvlk11"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.cs" id="1_11xe4"]
 [ext_resource type="Texture2D" uid="uid://b3bf2mre2ma6m" path="res://Artwork/Player/Idle (34x28).png" id="1_byot1"]
+[ext_resource type="Texture2D" uid="uid://sooaquowvrj7" path="res://Artwork/Player/Dead (34x28).png" id="2_fmbuk"]
 [ext_resource type="Texture2D" uid="uid://dk8m32d7dmqoj" path="res://Artwork/Player/Run (34x28).png" id="2_oug3r"]
 [ext_resource type="Texture2D" uid="uid://2a4mfw1uyw7k" path="res://Artwork/PlayerWithBomb/PigThrowBomb.png" id="2_rbork"]
 [ext_resource type="Texture2D" uid="uid://duxmniamf6pjw" path="res://Artwork/PlayerWithBomb/PigIdleWithBomb.png" id="3_2536c"]
 [ext_resource type="Texture2D" uid="uid://8blvyt5j6ikg" path="res://Artwork/Player/Jump (34x28).png" id="3_cn7r7"]
+[ext_resource type="Texture2D" uid="uid://xb25skt2faku" path="res://Artwork/Player/Hit (34x28).png" id="3_ft8ij"]
 [ext_resource type="Texture2D" uid="uid://ctjkf8akfg28s" path="res://Artwork/PlayerWithBomb/PickUpBomb.png" id="5_whl7l"]
 [ext_resource type="Texture2D" uid="uid://cj75rqoeyoqpd" path="res://Artwork/PlayerWithBomb/PigRunWithBomb.png" id="5_xtdby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_574ap"]
 size = Vector2(14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d86l"]
+atlas = ExtResource("2_fmbuk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtedj"]
+atlas = ExtResource("2_fmbuk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c38ed"]
+atlas = ExtResource("2_fmbuk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw1qo"]
+atlas = ExtResource("2_fmbuk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5gwy"]
+atlas = ExtResource("2_fmbuk")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu24w"]
 atlas = ExtResource("2_rbork")
@@ -31,6 +53,14 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu7ca"]
 atlas = ExtResource("2_rbork")
 region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uioa6"]
+atlas = ExtResource("3_ft8ij")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sppnp"]
+atlas = ExtResource("3_ft8ij")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8y6e3"]
 atlas = ExtResource("1_byot1")
@@ -192,6 +222,31 @@ region = Rect2(160, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4d86l")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtedj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c38ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw1qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5gwy")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_lu24w")
 }, {
 "duration": 1.0,
@@ -209,6 +264,17 @@ animations = [{
 "loop": false,
 "name": &"DropBomb",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uioa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sppnp")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -376,8 +442,12 @@ shape = SubResource("RectangleShape2D_574ap")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0812t")
-animation = &"RunWithBomb"
+animation = &"Dead"
 autoplay = "Idle"
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.1

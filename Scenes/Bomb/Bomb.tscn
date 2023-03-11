@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cjrlo5jm6ac55"]
+[gd_scene load_steps=20 format=3 uid="uid://cjrlo5jm6ac55"]
 
 [ext_resource type="Texture2D" uid="uid://3rx0f2isiye4" path="res://Artwork/Bomb/Boooooom (52x56).png" id="1_0hqv5"]
 [ext_resource type="Texture2D" uid="uid://cskymngouxcbh" path="res://Artwork/Bomb/Bomb On (52x56).png" id="1_8nior"]
@@ -106,14 +106,19 @@ size = Vector2(9, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a4pi"]
 size = Vector2(18, 12)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_n76wd"]
+radius = 20.0
+
 [node name="Bomb" type="CharacterBody2D"]
 script = ExtResource("1_i75xm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_4ecnm")
-animation = &"Idle"
+animation = &"Explode"
 autoplay = "Idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="FuseTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -127,3 +132,10 @@ shape = SubResource("RectangleShape2D_2qtpy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 position = Vector2(1, -6)
 shape = SubResource("RectangleShape2D_6a4pi")
+
+[node name="ExplosionArea" type="Area2D" parent="."]
+
+[node name="ExplosionCollider" type="CollisionShape2D" parent="ExplosionArea"]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_n76wd")
+disabled = true

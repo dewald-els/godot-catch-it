@@ -1,10 +1,10 @@
-Sprite2D
-AnimationPlayer
-AnimatedSprite2D
+Timer
 CollisionShape2D
 Area2D
+AnimatedSprite2D
+Sprite2D
 Node2D
-Timer
+AnimationPlayer
 Camera2D
 Marker2D
 CharacterBody2D

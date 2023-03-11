@@ -15,4 +15,7 @@ public partial class SignalBus : Node
 
     [Signal]
     public delegate void PlayerDroppedBombEventHandler(Node2D bomb);
+
+    [Signal]
+    public delegate void PlayerHitByExplosionEventHandler();
 }

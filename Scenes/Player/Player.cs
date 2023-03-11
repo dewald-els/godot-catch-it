@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class Player : CharacterBody2D
 {
@@ -7,6 +8,7 @@ public partial class Player : CharacterBody2D
     public AnimatedSprite2D AnimatedSprite;
     public Area2D BombPickupArea;
     private Timer CoyoteTimer;
+    private Timer RespawnTimer;
 
     private Vector2 StartPosition;
 
@@ -14,6 +16,9 @@ public partial class Player : CharacterBody2D
     private Boolean HasBomb = false;
     private Boolean PickingUpBomb = false;
     private Boolean DroppingBomb = false;
+    private Boolean IsHitByExplosion = false;
+    private Boolean IsDying = false;
+    private Boolean IsDead = false;
 
     private Boolean CanMove = true;
 
@@ -30,6 +35,8 @@ public partial class Player : CharacterBody2D
     private Boolean WasOnFloor = false;
     private const int JUMP_DRAG_MULTIPLIER = 5;
 
+    private int Health = 3;
+
 
 
     // Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -37,16 +44,19 @@ public partial class Player : CharacterBody2D
 
     public override void _Ready()
     {
+        RespawnTimer = GetNode<Timer>("RespawnTimer");
         AnimatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         BombPickupArea = GetNode<Area2D>("BombPickupArea");
         CoyoteTimer = GetNode<Timer>("CoyoteTimer");
 
         BombPickupArea.BodyEntered += OnBombPickupAreaEntered;
         AnimatedSprite.AnimationFinished += OnAnimatedSpriteAnimationFinished;
+        RespawnTimer.Timeout += OnRespawnTimerTimeout;
 
         StartPosition = Position;
 
-        SignalBus.Instance.Connect("PlayerDroppedBomb", new Callable(this, "BombDropped"));
+        SignalBus.Instance.Connect("PlayerDroppedBomb", new Callable(this, "OnBombDropped"));
+        SignalBus.Instance.Connect("PlayerHitByExplosion", new Callable(this, "OnHitByExplosion"));
     }
 
     public override void _PhysicsProcess(double delta)
@@ -89,7 +99,19 @@ public partial class Player : CharacterBody2D
 
         if (IsOnFloor())
         {
-            if (PickingUpBomb)
+            if (IsDead)
+            {
+                AnimatedSprite.Play("Dead");
+            }
+            else if (IsDying)
+            {
+                AnimatedSprite.Play("Die");
+            }
+            else if (IsHitByExplosion)
+            {
+                AnimatedSprite.Play("Hit");
+            }
+            else if (PickingUpBomb)
             {
                 AnimatedSprite.Play("PickUpBomb");
             }
@@ -201,7 +223,25 @@ public partial class Player : CharacterBody2D
     }
 
     // Events
-    private void BombDropped()
+    private void OnRespawnTimerTimeout()
+    {
+        Position = StartPosition;
+        IsDead = false;
+        Health = 3;
+        CanMove = true;
+    }
+    private void OnHitByExplosion()
+    {
+        IsHitByExplosion = true;
+        Health--;
+        if (Health == 0)
+        {
+            IsDying = true;
+            RespawnTimer.Start();
+        }
+    }
+
+    private void OnBombDropped()
     {
         if (HasBomb)
         {
@@ -213,7 +253,12 @@ public partial class Player : CharacterBody2D
     }
     private void OnAnimatedSpriteAnimationFinished()
     {
-        if (PickingUpBomb)
+        if (IsDying)
+        {
+            IsDying = false;
+            IsDead = true;
+        }
+        else if (PickingUpBomb)
         {
             HasBomb = true;
             PickingUpBomb = false;
@@ -221,6 +266,10 @@ public partial class Player : CharacterBody2D
         else if (DroppingBomb)
         {
             DroppingBomb = false;
+        }
+        else if (IsHitByExplosion)
+        {
+            IsHitByExplosion = false;
         }
 
         CanMove = true;
