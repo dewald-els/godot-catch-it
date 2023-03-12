@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh21kod21f67t"]
+[gd_scene load_steps=6 format=3 uid="uid://47yf4po0b3rm"]
 
-[ext_resource type="Script" path="res://Scenes/World/World.cs" id="1_vrc0h"]
-[ext_resource type="PackedScene" uid="uid://cgw43jpbvlk11" path="res://Scenes/Player/Player.tscn" id="2_ase4k"]
-[ext_resource type="TileSet" uid="uid://doswlyl8mpepe" path="res://Tilesets/TileSet.tres" id="3_ma7pa"]
-[ext_resource type="PackedScene" uid="uid://dr7aqqklt0ha2" path="res://Scenes/BombDropOff/BombDropOff.tscn" id="4_vdqg1"]
-[ext_resource type="PackedScene" uid="uid://btx3wmoa4dr8v" path="res://Scenes/PlayerHealth/PlayerHealth.tscn" id="5_01npe"]
+[ext_resource type="Script" path="res://Scenes/World/World.cs" id="1_1ppfl"]
+[ext_resource type="TileSet" uid="uid://doswlyl8mpepe" path="res://Tilesets/TileSet.tres" id="2_okduo"]
+[ext_resource type="PackedScene" uid="uid://cgw43jpbvlk11" path="res://Scenes/Player/Player.tscn" id="3_cb806"]
+[ext_resource type="PackedScene" uid="uid://btx3wmoa4dr8v" path="res://Scenes/PlayerHealth/PlayerHealth.tscn" id="4_78n4w"]
+[ext_resource type="PackedScene" uid="uid://dr7aqqklt0ha2" path="res://Scenes/BombDropOff/BombDropOff.tscn" id="5_y17ov"]
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_vrc0h")
+script = ExtResource("1_1ppfl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -17,7 +17,7 @@ wait_time = 4.0
 autostart = true
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("3_ma7pa")
+tile_set = ExtResource("2_okduo")
 cell_quadrant_size = 32
 format = 2
 layer_0/name = "backround"
@@ -37,11 +37,11 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(655361, 196608, 2, 655378, 65536, 2, 589825, 720896, 2, 524289, 196608, 2, 458753, 196608, 2, 393217, 196608, 2, 327681, 196608, 2, 262145, 196608, 2, 196609, 196608, 2, 131073, 196608, 2, 65537, 196608, 2, 65554, 65536, 2, 131090, 65536, 2, 196626, 65536, 2, 262162, 65536, 2, 327698, 65536, 2, 393234, 65536, 2, 458770, 65536, 2, 524306, 65536, 2, 589842, 655360, 1, 0, 131072, 2, 1, 458752, 1, 2, 131072, 3, 3, 131072, 3, 4, 131072, 3, 5, 131072, 3, 6, 131072, 3, 7, 131072, 3, 8, 131072, 3, 9, 131072, 3, 10, 131072, 3, 11, 131072, 3, 12, 131072, 3, 13, 131072, 3, 14, 131072, 3, 15, 131072, 3, 16, 131072, 3, 17, 131072, 3, 18, 524288, 1, 19, 131072, 2, 65555, 131072, 2, 131091, 131072, 2, 196627, 131072, 2, 262163, 131072, 2, 327699, 131072, 2, 393235, 131072, 2, 458771, 131072, 2, 524307, 131072, 2, 589843, 131072, 2, 655379, 131072, 2, 720915, 131072, 2, 720914, 524288, 2, 720897, 458752, 2, 655360, 131072, 2, 720896, 131072, 2, 589824, 131072, 2, 524288, 131072, 2, 458752, 131072, 2, 393216, 131072, 2, 327680, 131072, 2, 262144, 131072, 2, 196608, 131072, 2, 131072, 131072, 2, 65536, 131072, 2, 589838, 65536, 5, 589839, 131072, 5, 589828, 131072, 5, 589829, 196608, 5, 720898, 131072, 1, 720899, 131072, 1, 720900, 131072, 1, 720901, 131072, 1, 720902, 131072, 1, 720903, 131072, 1, 720904, 131072, 1, 720905, 131072, 1, 720906, 131072, 1, 720907, 131072, 1, 720908, 131072, 1, 720909, 131072, 1, 720910, 131072, 1, 720911, 131072, 1, 720912, 131072, 1, 720913, 131072, 1, 589826, 131072, 5, 589827, 131072, 5, 589841, 131072, 5, 589840, 131072, 5, 524297, 65536, 5, 524298, 196608, 5, 786450, 131072, 2, 786432, 131072, 2, 786433, 131072, 2, 786434, 131072, 2, 786435, 131072, 2, 786436, 131072, 2, 786437, 131072, 2, 786438, 131072, 2, 786439, 131072, 2, 786440, 131072, 2, 786441, 131072, 2, 786442, 131072, 2, 786443, 131072, 2, 786444, 131072, 2, 786445, 131072, 2, 786446, 131072, 2, 786447, 131072, 2, 786448, 131072, 2, 786449, 131072, 2, 786451, 131072, 2)
 
-[node name="Player" parent="." instance=ExtResource("2_ase4k")]
+[node name="Player" parent="." instance=ExtResource("3_cb806")]
 z_index = 1
 position = Vector2(320, 352)
 
-[node name="PlayerHealth" parent="." instance=ExtResource("5_01npe")]
+[node name="PlayerHealth" parent="." instance=ExtResource("4_78n4w")]
 
 [node name="BombSpawnPoint1" type="Marker2D" parent="." groups=["BombSpawnMarker"]]
 position = Vector2(160, 48)
@@ -52,4 +52,4 @@ position = Vector2(320, 56)
 [node name="BombSpawnPoint3" type="Marker2D" parent="." groups=["BombSpawnMarker"]]
 position = Vector2(480, 48)
 
-[node name="BombDropOff" parent="." instance=ExtResource("4_vdqg1")]
+[node name="BombDropOff" parent="." instance=ExtResource("5_y17ov")]

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Catch It"
-run/main_scene="res://Scenes/World/World.tscn"
+run/main_scene="res://Scenes/Main/Main.tscn"
 config/features=PackedStringArray("4.0", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SignalBus="*res://Autoloaders/SignalBus.cs"
+LevelManager="*res://Autoloaders/LevelManager.cs"
 
 [display]
 

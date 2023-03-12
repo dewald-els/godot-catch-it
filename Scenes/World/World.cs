@@ -14,6 +14,12 @@ public partial class World : Node2D
         GD.Print("Markers: " + markers.Count);
         BombSpwawnTimer = GetNode<Timer>("BombSpawnTimer");
         BombSpwawnTimer.Timeout += OnBombSpwawnTimerTimeout;
+        SignalBus.Instance.Connect("BombDropOffFull", new Callable(this, "OnBombDropOffFull"));
+    }
+
+    private void OnBombDropOffFull()
+    {
+        BombSpwawnTimer.Stop();
     }
 
     private void OnBombSpwawnTimerTimeout()

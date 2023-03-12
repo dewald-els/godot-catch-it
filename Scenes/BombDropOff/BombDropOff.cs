@@ -38,5 +38,10 @@ public partial class BombDropOff : Node2D
             BombCount++;
             CapacityBar.Value = Mathf.Ceil((float)BombCount / BombCapacity * 100);
         }
+
+        if (IsFull())
+        {
+            SignalBus.Instance.EmitSignal("BombDropOffFull");
+        }
     }
 }
