@@ -1,6 +1,7 @@
-res://Scenes/World/World.tscn
-res://Tilesets/TileSet.tres
 res://Scenes/Player/Player.tscn
+res://Tilesets/TileSet.tres
+res://Scenes/BombDropOff/BombDropOff.cs
+res://Scenes/World/World.tscn
 res://Scenes/Bomb/Bomb.tscn
 res://Scenes/BombDropOff/BombDropOff.tscn
-res://Scenes/BombDropOff/BombDropOff.cs
+res://Scenes/PlayerHealth/PlayerHealth.tscn

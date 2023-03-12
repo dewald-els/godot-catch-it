@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://btx3wmoa4dr8v"]
+
+[ext_resource type="Script" path="res://Scenes/PlayerHealth/PlayerHealth.cs" id="1_1m28y"]
+[ext_resource type="Texture2D" uid="uid://bj7xjpxpxp1mb" path="res://Artwork/Lifebar/Live Bar.png" id="1_61ld1"]
+[ext_resource type="Texture2D" uid="uid://c8v3eak2qicuq" path="res://Artwork/Lifebar/Big Heart Idle (18x14).png" id="2_cvp16"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7r70"]
+atlas = ExtResource("2_cvp16")
+region = Rect2(0, 0, 18, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xevox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7r70")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[node name="PlayerHealth" type="Node2D"]
+z_index = 99
+position = Vector2(56, 32)
+script = ExtResource("1_1m28y")
+
+[node name="LifeBar" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_61ld1")
+
+[node name="Heart1" type="AnimatedSprite2D" parent="LifeBar" groups=["PlayerLifeBarHeart"]]
+position = Vector2(-12.6667, 0)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_xevox")
+animation = &"Idle"
+frame_progress = 0.631509
+
+[node name="Heart2" type="AnimatedSprite2D" parent="LifeBar" groups=["PlayerLifeBarHeart"]]
+position = Vector2(-1.33333, 0)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_xevox")
+animation = &"Idle"
+frame_progress = 0.454759
+
+[node name="Heart3" type="AnimatedSprite2D" parent="LifeBar" groups=["PlayerLifeBarHeart"]]
+position = Vector2(10, 0)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_xevox")
+animation = &"Idle"
+frame_progress = 0.454759

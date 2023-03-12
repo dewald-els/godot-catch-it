@@ -91,11 +91,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\dewal\\Projects\\Godot\\CatchIt\\Catch It.csproj",
+      "projectUniqueName": "C:\\Users\\dewal\\Projects\\Godot\\CatchIt\\Catch It.csproj",
       "projectName": "Catch It",
-      "projectPath": "c:\\Users\\dewal\\Projects\\Godot\\CatchIt\\Catch It.csproj",
+      "projectPath": "C:\\Users\\dewal\\Projects\\Godot\\CatchIt\\Catch It.csproj",
       "packagesPath": "C:\\Users\\dewal\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\dewal\\Projects\\Godot\\CatchIt\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\dewal\\Projects\\Godot\\CatchIt\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\dewal\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"

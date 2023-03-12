@@ -18,4 +18,8 @@ public partial class SignalBus : Node
 
     [Signal]
     public delegate void PlayerHitByExplosionEventHandler();
+
+    [Signal]
+    public delegate void PlayerRespawnedEventHandler();
+
 }

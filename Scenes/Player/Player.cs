@@ -231,6 +231,7 @@ public partial class Player : CharacterBody2D
         IsDead = false;
         Health = 3;
         CanMove = true;
+        SignalBus.Instance.EmitSignal("PlayerRespawned");
     }
     private void OnHitByExplosion()
     {
