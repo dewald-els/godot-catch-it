@@ -340,7 +340,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"IdleWithBomb",
-"speed": 5.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,

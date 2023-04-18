@@ -31,7 +31,7 @@ public partial class BombDropOff : Node2D
 
     public void OnBombDropOffAreaEntered(Node2D body)
     {
-        if (!IsFull() && body is Player player)
+        if (!IsFull() && body is Player player && player.HasBomb)
         {
             SignalBus.Instance.EmitSignal("PlayerDroppedBomb");
             AnimationPlayer.Play("BombDropped");

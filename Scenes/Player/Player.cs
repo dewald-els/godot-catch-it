@@ -14,7 +14,7 @@ public partial class Player : CharacterBody2D
     private Vector2 StartPosition;
 
     // State
-    private Boolean HasBomb = false;
+    public Boolean HasBomb = false;
     private Boolean PickingUpBomb = false;
     private Boolean DroppingBomb = false;
     private Boolean IsHitByExplosion = false;
@@ -25,14 +25,14 @@ public partial class Player : CharacterBody2D
 
     // Movement
     private const float VELOCITY_X_LERP = -40.0f;
-    private const float MAX_X_SPEED = 200.0f;
+    private const float MAX_X_SPEED = 150.0f;
     private const float ACCELERATION_X = 2500.0f;
 
     private const float AIRBORNE_ACCELERATION_X = 3000.0f;
     private float Direction = 1;
 
     // Jump
-    private int JumpPower = 375;
+    private int JumpPower = 275;
     private Boolean WasOnFloor = false;
     private const int JUMP_DRAG_MULTIPLIER = 5;
 

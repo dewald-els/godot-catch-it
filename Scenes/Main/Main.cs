@@ -9,6 +9,7 @@ public partial class Main : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        RenderingServer.SetDefaultClearColor(new Color(63.0f, 56.0f, 81.0f, 1.0f));
         LevelManager.Instance.SetScenes(Scenes);
         LevelManager.Instance.LoadLevel(0);
     }
