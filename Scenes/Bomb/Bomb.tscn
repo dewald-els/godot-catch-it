@@ -106,7 +106,7 @@ animations = [{
 size = Vector2(9, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6a4pi"]
-size = Vector2(18, 12)
+size = Vector2(18, 19)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n76wd"]
 radius = 20.0
@@ -130,7 +130,7 @@ shape = SubResource("RectangleShape2D_2qtpy")
 [node name="PickupArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-position = Vector2(1, -6)
+position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_6a4pi")
 
 [node name="ExplosionArea" type="Area2D" parent="."]

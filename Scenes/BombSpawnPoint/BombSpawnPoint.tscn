@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnewj7msyqpy8"]
+
+[ext_resource type="Script" path="res://Scenes/BombSpawnPoint/BombSpawnPoint.cs" id="1_nlngc"]
+
+[node name="BombSpawnPoint" type="Marker2D" groups=["BombSpawnMarker"]]
+script = ExtResource("1_nlngc")
