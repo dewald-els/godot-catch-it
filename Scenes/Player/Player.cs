@@ -292,6 +292,7 @@ public partial class Player : CharacterBody2D
 
     private void OnPlayerDied()
     {
+        Health = 0;
         IsDead = true;
         CanMove = false;
         RespawnTimer.Start();
