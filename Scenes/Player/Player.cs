@@ -59,6 +59,7 @@ public partial class Player : CharacterBody2D
 
         SignalBus.Instance.Connect("PlayerDroppedBomb", new Callable(this, "OnBombDropped"));
         SignalBus.Instance.Connect("PlayerHitByExplosion", new Callable(this, "OnHitByExplosion"));
+        SignalBus.Instance.Connect("PlayerDied", new Callable(this, "OnPlayerDied"));
     }
 
     public override void _PhysicsProcess(double delta)
@@ -287,5 +288,12 @@ public partial class Player : CharacterBody2D
             Velocity = Vector2.Zero;
             SignalBus.Instance.EmitSignal("PlayerPickedUpBomb", body);
         }
+    }
+
+    private void OnPlayerDied()
+    {
+        IsDead = true;
+        CanMove = false;
+        RespawnTimer.Start();
     }
 }

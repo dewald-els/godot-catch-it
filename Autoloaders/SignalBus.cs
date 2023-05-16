@@ -25,4 +25,7 @@ public partial class SignalBus : Node
     [Signal]
     public delegate void BombDropOffFullEventHandler();
 
+    [Signal]
+    public delegate void PlayerDiedEventHandler();
+
 }

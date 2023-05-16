@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdbfm7w8m3g7f"]
+[gd_scene load_steps=3 format=3 uid="uid://bdbfm7w8m3g7f"]
 
 [ext_resource type="PackedScene" uid="uid://47yf4po0b3rm" path="res://Scenes/Levels/Level1.tscn" id="1_2k61u"]
+[ext_resource type="PackedScene" uid="uid://7kl6xyxo7am2" path="res://Scenes/DeathArea/DeathArea.tscn" id="2_76hhs"]
 
 [node name="Level4" instance=ExtResource("1_2k61u")]
 
@@ -16,3 +17,7 @@ position = Vector2(304, 65)
 
 [node name="BombSpawnPoint3" parent="." index="7"]
 position = Vector2(417, 48)
+
+[node name="DeathArea" parent="." index="9" instance=ExtResource("2_76hhs")]
+position = Vector2(223, 330)
+scale = Vector2(19.16, 1)
